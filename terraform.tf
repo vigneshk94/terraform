@@ -9,7 +9,7 @@ variable {
     ami           = "${ami}"
     instance_type = "${instance_type}"
     key_name      = "${key_name}"
-    Name          = "${Name_of_the_instance}"
+    name          = "${name_of_the_instance}"
 }
 
 ####################################################################
@@ -28,7 +28,7 @@ resource "aws_instance" "web" {
     key_name      = "${var.key_name}"
     associate_public_ip_address = "true"
     tags {
-        Name = "${var.Name_of_the_instance}"
+        name = "${var.name_of_the_instance}"
     }
 }
 
