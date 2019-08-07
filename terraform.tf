@@ -2,15 +2,15 @@
 # VARIABLES
 ####################################################################
 
-variable {
-    region        = "${region}"
-    access_key    = "${access_key}"
-    secret_key    = "${secret_key}"
-    ami           = "${ami}"
-    instance_type = "${instance_type}"
-    key_name      = "${key_name}"
-    name          = "${name_of_the_instance}"
-}
+variable "region" {}
+variable "access_key" {}
+variable "secret_key" {}
+variable "ami" {}
+variable "instance_type" {}
+variable "key_name" {}
+variable "name" {}
+variable "name_of_the_instance" {}
+
 
 ####################################################################
 # PROVIDERS
@@ -27,7 +27,7 @@ resource "aws_instance" "web" {
     instance_type = "${var.instance_type}"
     key_name      = "${var.key_name}"
     associate_public_ip_address = "true"
-    tags {
+    tags = {
         name = "${var.name_of_the_instance}"
     }
 }
